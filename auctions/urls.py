@@ -12,5 +12,6 @@ urlpatterns = [
     path("listing/<pk>/delete/", views.ListingDelete.as_view(), name="listing_delete"),
     path("addtowishlist/<int:product_id>", views.add_to_wishlist, name="add_to_wishlist"),
     path("wishlist/", views.wishlist, name="wishlist"),
+    path("listing/<int:product_id>/comment", views.new_comment, name="new_comment"),
 
 ]

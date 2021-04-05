@@ -1,6 +1,7 @@
 {% extends "auctions/layout.html" %}
 
 {% block title %} {{listing.title}}{% endblock %}
+
 {% block body %}
 
 <div class="container">
@@ -12,7 +13,7 @@
         </div>
     {% endif %}
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-5">
             <span class="thumbnail text-center">
       			<img src="{{listing.image}}">
       			<h4 class="text-danger">{{listing.title}}</h4>
@@ -31,6 +32,26 @@
       					<button class="btn btn-danger right" >BID NOW</button>
       				</div>
                 </div>
+            </span>
+        </div>
+        <div class="col-md-5">
+            <span class="thumbnail text-center">
+                <h4>Comments:</h4>
+                {% if not listing.listing_comments.all %}
+                    <a href="{% url 'new_comment' listing.id %}">Add a comment</a
+                {% else %}
+                    <a href="{% url 'new_comment' listing.id %}">Add a comment</a>
+                    <br>
+                    {% for comment in listing.listing_comments.all %}
+                        <strong>
+                            {{comment.user}} -
+                            {{comment.date_added}}
+                        </strong>
+                        <br>
+                        {{comment.body}}
+                        <br>
+                    {% endfor %}
+                {% endif %}
             </span>
         </div>
 {% endblock %}

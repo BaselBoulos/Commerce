@@ -17,6 +17,7 @@ class AuctionListing(models.Model):
     def __str__(self):
         return f"{self.title} listing by {self.seller}"
 
+
 class WishList(models.Model):
     user = models.CharField(max_length=64)
     listing_id = models.IntegerField()

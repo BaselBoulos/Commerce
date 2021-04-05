@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c0c900c-6750-4d24-a540-2132a27a59c6" name="Default Changelist" comment="Added New models for comments and bidding section,&#10;&#10;Ran into database update problem, deleted and made migrations again.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2021_3_41_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2021_3_41_PM__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="9c0c900c-6750-4d24-a540-2132a27a59c6" name="Default Changelist" comment="Added New model for comments,">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/form-template.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/form-template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/listing_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/listing_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/new_listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/new_listing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617582253435</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added New model for comments,">
+      <created>1617583099433</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1617583099433</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,7 +136,13 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -141,6 +157,7 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="Added New models for comments and bidding section,&#10;&#10;Ran into database update problem, deleted and made migrations again." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added New models for comments and bidding section,&#10;&#10;Ran into database update problem, deleted and made migrations again." />
+    <MESSAGE value="Added New model for comments," />
+    <option name="LAST_COMMIT_MESSAGE" value="Added New model for comments," />
   </component>
 </project>

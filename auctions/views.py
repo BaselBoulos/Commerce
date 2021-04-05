@@ -122,3 +122,14 @@ def wishlist(request):
     })
 
 
+def new_comment(request):
+    commentform = CommentForm
+    if request.method == "POST":
+        commentform = CommentForm(request.POST)
+        if commentform.is_valid():
+            commentform = commentform.save()
+            commentform.save()
+            return HttpResponseRedirect(reverse('index'))
+    return render(request, "auctions/new_comment.html", {
+        "commentform": commentform,
+    })
