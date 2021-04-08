@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c0c900c-6750-4d24-a540-2132a27a59c6" name="Default Changelist" comment="Added New model for comments,">
+    <list default="true" id="9c0c900c-6750-4d24-a540-2132a27a59c6" name="Default Changelist" comment="Added comment forms and section in each active listing, Next step is to redirect to the same listing after adding a comment, and add in url the full active listing url with /comment at the end">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/form-template.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/form-template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/listing_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/listing_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/new_listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/new_listing.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
@@ -121,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617583099433</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added comment forms and section in each active listing, Next step is to redirect to the same listing after adding a comment, and add in url the full active listing url with /comment at the end">
+      <created>1617588650346</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1617588650346</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +164,7 @@
     </ignored-roots>
     <MESSAGE value="Added New models for comments and bidding section,&#10;&#10;Ran into database update problem, deleted and made migrations again." />
     <MESSAGE value="Added New model for comments," />
-    <option name="LAST_COMMIT_MESSAGE" value="Added New model for comments," />
+    <MESSAGE value="Added comment forms and section in each active listing, Next step is to redirect to the same listing after adding a comment, and add in url the full active listing url with /comment at the end" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comment forms and section in each active listing, Next step is to redirect to the same listing after adding a comment, and add in url the full active listing url with /comment at the end" />
   </component>
 </project>

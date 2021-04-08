@@ -11,6 +11,7 @@ from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 class IndexView(generic.ListView):
@@ -73,6 +74,7 @@ def register(request):
         return render(request, "auctions/register.html")
 
 
+@login_required(login_url="login")
 def new_listing(request):
     listingform = AuctionListingForm
     if request.method == "POST":
@@ -87,17 +89,7 @@ def new_listing(request):
     })
 
 
-class DetailView(generic.DetailView):
-    model = AuctionListing
-    context_object_name = 'listing'
-    template_name = "auctions/listing_details.html"
-
-
-class ListingDelete(generic.DeleteView):
-    model = AuctionListing
-    success_url = reverse_lazy('index')
-
-
+@login_required(login_url="login")
 def add_to_wishlist(request, product_id):
     product = WishList.objects.filter(listing_id=product_id, user=request.user.username)
     if product:
@@ -112,6 +104,7 @@ def add_to_wishlist(request, product_id):
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
+@login_required(login_url="login")
 def wishlist(request):
     product = WishList.objects.filter(user=request.user)
     listing_ids = WishList.objects.values_list('listing_id', flat=True)
@@ -122,14 +115,50 @@ def wishlist(request):
     })
 
 
-def new_comment(request):
+class DetailView(generic.DetailView):
+    model = AuctionListing
+    context_object_name = 'listing'
+    template_name = "auctions/listing_details.html"
+
+
+class ListingDelete(generic.DeleteView):
+    model = AuctionListing
+    success_url = reverse_lazy('index')
+
+
+@login_required(login_url="login")
+def new_comment(request, product_id):
+    product = AuctionListing.objects.get(id=product_id)
     commentform = CommentForm
-    if request.method == "POST":
+    if request.method == "GET":
+        request.session['login_from'] = request.META.get('HTTP_REFERER', '/')
+    elif request.method == "POST":
         commentform = CommentForm(request.POST)
         if commentform.is_valid():
-            commentform = commentform.save()
+            commentform = commentform.save(commit=False)
+            commentform.listing = product
+            commentform.user = request.user
             commentform.save()
-            return HttpResponseRedirect(reverse('index'))
+            return HttpResponseRedirect(request.session['login_from'])
     return render(request, "auctions/new_comment.html", {
         "commentform": commentform,
+    })
+
+
+@login_required(login_url="login")
+def new_bid(request, product_id):
+    product = AuctionListing.objects.get(id=product_id)
+    bidform = BidForm
+    if request.method == "GET":
+        request.session['login_from'] = request.META.get('HTTP_REFERER', '/')
+    elif request.method == "POST":
+        bidform = BidForm(request.POST)
+        if bidform.is_valid():
+            bidform = bidform.save(commit=False)
+            bidform.listing = product
+            bidform.user = request.user
+            bidform.save()
+            return HttpResponseRedirect(request.session['login_from'])
+    return render(request, "auctions/new_bid.html", {
+        "bidform": bidform,
     })
