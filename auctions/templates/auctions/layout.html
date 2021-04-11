@@ -23,15 +23,26 @@
                     </button>
                     <a class ="navbar-brand" href="{% url 'index' %}">Auctions</a>
                 </div>
-
                 <!-- Items -->
                 <div class="collapse navbar-collapse" id="topNavBar">
                     <ul class="nav navbar-nav">
                         <li class="">
                             <a href="{% url 'index' %}">Active Listings</a>
                         </li>
+                    {% if categories_menu %}
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        {% for category in categories_menu%}
+                            <li><a href="{% url 'category' category%}">{{category}}</a></li>
+                        {%endfor%}
+                    </ul>
+                  </li>
+                    {%else%}
+                        <li><a href="{% url 'categories_list'%}">Categories</a></li>
+                    {%endif%}
                     {% if user.is_authenticated %}
-
                         <li class="">
                             <a href="{% url 'new_listing' %}">Create Listing</a>
                         </li>
@@ -40,6 +51,7 @@
                         </li>
                         <li class="">
                             <a href="{% url 'wishlist' %}">WishList</a>
+                        </li>
                         </li>
                         <li class="">
                             <a href="{% url 'logout' %}">
@@ -65,8 +77,6 @@
              {% endfor %}
         </div>
     {% endif %}
-
-
         {% block body %}
         {% endblock %}
     </body>

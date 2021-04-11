@@ -21,6 +21,23 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return AuctionListing.objects.all()
 
+    def get_context_data(self, *args, **kwargs):
+        categories_menu = Category.objects.all()
+        context = super(IndexView, self).get_context_data(*args, **kwargs)
+        context["categories_menu"] = categories_menu
+        return context
+
+
+class DetailView(generic.DetailView):
+    model = AuctionListing
+    context_object_name = 'listing'
+    template_name = "auctions/listing_details.html"
+
+
+class ListingDelete(generic.DeleteView):
+    model = AuctionListing
+    success_url = reverse_lazy('index')
+
 
 def login_view(request):
     if request.method == "POST":
@@ -116,17 +133,6 @@ def wishlist(request):
     })
 
 
-class DetailView(generic.DetailView):
-    model = AuctionListing
-    context_object_name = 'listing'
-    template_name = "auctions/listing_details.html"
-
-
-class ListingDelete(generic.DeleteView):
-    model = AuctionListing
-    success_url = reverse_lazy('index')
-
-
 @login_required(login_url="login")
 def new_comment(request, product_id):
     product = AuctionListing.objects.get(id=product_id)
@@ -162,6 +168,7 @@ def new_bid(request, product_id):
             bidform = bidform.save(commit=False)
             if bidform.price >= product.start_bid and bidform.price > last_price:
                 last_price = bidform.price
+                product.winner = request.user.username
                 product.current_price = last_price
                 product.save()
             else:
@@ -192,7 +199,22 @@ def close_auction(request, product_id):
         if request.method == "POST":
             product.is_closed = True
             product.save()
-            return HttpResponseRedirect(reverse('index'))
+            return HttpResponseRedirect(reverse("index"))
     else:
         messages.error(request, "You are not the owner of this listing")
-        return HttpResponseRedirect(request.META['HTTP_REFERER'])
+        return HttpResponseRedirect(request.META["HTTP_REFERER"])
+
+
+def category_view(request, cats):
+    category_listings = AuctionListing.objects.filter(category=cats)
+    return render(request, "auctions/categories.html", {
+        'cats': cats,
+        'category_listings': category_listings,
+    })
+
+
+def category_listview(request):
+    categories_menu_list = Category.objects.all()
+    return render(request, "auctions/category_list.html", {
+        'categories_menu_list': categories_menu_list
+    })

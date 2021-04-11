@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c0c900c-6750-4d24-a540-2132a27a59c6" name="Default Changelist" comment="Updates in Bid system, in addition to Bid history for each listing">
+    <list default="true" id="9c0c900c-6750-4d24-a540-2132a27a59c6" name="Default Changelist" comment="Updates in HTML/CSS, fixes in bid system, and new feature - close auction.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/static/auctions/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/static/auctions/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/listing_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/listing_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/new_bid.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/new_bid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/new_comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/new_comment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/new_listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/new_listing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/view_bids.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/view_bids.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/wishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/wishlist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/views.py" afterDir="false" />
@@ -146,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617944105319</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updates in HTML/CSS, fixes in bid system, and new feature - close auction.">
+      <created>1618050207781</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618050207781</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +189,17 @@
     <MESSAGE value="Added comment forms and section in each active listing, Next step is to redirect to the same listing after adding a comment, and add in url the full active listing url with /comment at the end" />
     <MESSAGE value="First bidding system update:&#10;Added a Bid model, form, HTML page, views.py function" />
     <MESSAGE value="Updates in Bid system, in addition to Bid history for each listing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates in Bid system, in addition to Bid history for each listing" />
+    <MESSAGE value="Updates in HTML/CSS, fixes in bid system, and new feature - close auction." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates in HTML/CSS, fixes in bid system, and new feature - close auction." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/auctions/models.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

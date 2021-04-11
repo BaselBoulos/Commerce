@@ -18,7 +18,14 @@ class AuctionListing(models.Model):
     winner = models.CharField(max_length=100, default="Default_Value")
 
     def __str__(self):
-        return f"{self.title} listing | {self.seller}"
+        return f"{self.title}"
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 class WishList(models.Model):
